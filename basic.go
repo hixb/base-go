@@ -54,6 +54,17 @@ func triangle() {
 	fmt.Println(c)
 }
 
+// 定义常量
+func consts() {
+	const (
+		filename = "hello.txt"
+		a, b     = 3, 4
+	)
+	var c int
+	c = int(math.Sqrt(a*a + b*b))
+	fmt.Println(filename, c)
+}
+
 func main() {
 	variableZeroVal()
 	variableInitialVal()
@@ -62,4 +73,5 @@ func main() {
 	fmt.Println(aa, bb, cc)
 	euler()
 	triangle()
+	consts()
 }
