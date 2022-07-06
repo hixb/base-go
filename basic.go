@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+	"math/cmplx"
+)
 
 var (
 	aa = 3
@@ -37,10 +41,16 @@ func variableShorter() {
 	fmt.Println(a, b, c, d)
 }
 
+// 欧拉公式
+func euler() {
+	fmt.Printf("%.3f\n", cmplx.Exp(1i*math.Pi)+1)
+}
+
 func main() {
 	variableZeroVal()
 	variableInitialVal()
 	variableTypeDeduction()
 	variableShorter()
 	fmt.Println(aa, bb, cc)
+	euler()
 }
