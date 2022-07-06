@@ -46,6 +46,14 @@ func euler() {
 	fmt.Printf("%.3f\n", cmplx.Exp(1i*math.Pi)+1)
 }
 
+// 三角形, 强制类型转换
+func triangle() {
+	var a, b int = 3, 4
+	var c int
+	c = int(math.Sqrt(float64(a*a + b*b)))
+	fmt.Println(c)
+}
+
 func main() {
 	variableZeroVal()
 	variableInitialVal()
@@ -53,4 +61,5 @@ func main() {
 	variableShorter()
 	fmt.Println(aa, bb, cc)
 	euler()
+	triangle()
 }
