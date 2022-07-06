@@ -65,6 +65,27 @@ func consts() {
 	fmt.Println(filename, c)
 }
 
+// 枚举类型定义常量
+func enums() {
+	// iota 表示常量是自增值
+	const (
+		cpp = iota
+		_
+		javascript
+		golang
+	)
+	const (
+		b = 1 << (10 * iota)
+		kb
+		mb
+		gb
+		tb
+		pb
+	)
+	fmt.Println(cpp, javascript, golang)
+	fmt.Println(b, kb, mb, gb, tb, pb)
+}
+
 func main() {
 	variableZeroVal()
 	variableInitialVal()
@@ -74,4 +95,5 @@ func main() {
 	euler()
 	triangle()
 	consts()
+	enums()
 }
