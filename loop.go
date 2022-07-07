@@ -7,6 +7,13 @@ import (
 	"strconv"
 )
 
+/**
+for, if 后面的条件没有括号
+if 条件里可以定义变量
+没有while
+switch 不需要 break, 也可以直接switch多个条件
+*/
+
 // 进制
 func convertToBin(n int) string {
 	result := ""
