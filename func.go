@@ -54,6 +54,11 @@ func sum(numbers ...int) int {
 	return s
 }
 
+// 交换两个变量值
+func swap(a, b int) (int, int) {
+	return b, a
+}
+
 func main() {
 	if result, err := eval(13, 3, "X"); err != nil {
 		fmt.Println("Error: ", err)
@@ -67,4 +72,9 @@ func main() {
 			return int(math.Pow(float64(a), float64(b)))
 		}, 3, 4))
 	fmt.Println(sum(1, 2, 3))
+
+	a, b := 3, 4
+	a, b = swap(a, b)
+	fmt.Println(a, b)
+
 }
