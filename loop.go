@@ -31,6 +31,13 @@ func readFile(filename string) {
 	}
 }
 
+// 死循环
+func forever() {
+	for {
+		fmt.Println("abc")
+	}
+}
+
 func main() {
 	fmt.Println(
 		convertToBin(5),         // 101
@@ -39,4 +46,5 @@ func main() {
 		convertToBin(0),         // 0
 	)
 	readFile("abc.txt")
+	//forever()
 }
