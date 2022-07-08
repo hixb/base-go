@@ -26,6 +26,20 @@ func pointerPassing2(arr []int) {
 	}
 }
 
+// slice 扩展
+func sliceExpand() {
+	// s1的值为[2 3 4 5], s2的值为[5 6]
+	// slice 可以向后扩展, 不可以向前扩展
+	// s[i]不可以超越[len](s), 向后扩展不可哟超越底层数据cap(s)
+	arr := [...]int{0, 1, 3, 4, 5, 6, 7}
+	fmt.Println("arr =", arr)
+	s1 := arr[2:6]
+	s2 := s1[3:5] // [s1[3], s1[4]]
+
+	fmt.Printf("s1=%v, len(s1)=%d, cap(s1)=%d\n", s1, len(s1), cap(s1))
+	fmt.Printf("s2=%v, len(s2)=%d, cap(s2)=%d\n", s2, len(s2), cap(s2))
+}
+
 func main() {
 	arr := [...]int{0, 1, 2, 3, 4, 5, 6, 7, 8}
 	var arr2 [5]int
@@ -55,4 +69,6 @@ func main() {
 	s2 = s2[2:]
 	fmt.Println(s2)
 
+	fmt.Println("sliceExpand ==============================")
+	sliceExpand()
 }
