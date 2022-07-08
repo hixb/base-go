@@ -27,4 +27,8 @@ func main() {
 	fmt.Println("Copying slice ===============================")
 	copy(s2, s1)
 	printSlice(s2)
+
+	fmt.Println("Deleting element from slice ===============================")
+	s2 = append(s2[:3], s2[4:]...)
+	printSlice(s2)
 }
