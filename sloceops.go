@@ -31,4 +31,9 @@ func main() {
 	fmt.Println("Deleting element from slice ===============================")
 	s2 = append(s2[:3], s2[4:]...)
 	printSlice(s2)
+
+	fmt.Println("Popping from front ===============================")
+	front := s2[0]
+	s2 = s2[1:]
+	fmt.Println(front)
 }
