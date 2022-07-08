@@ -23,4 +23,8 @@ func main() {
 	s3 := make([]int, 10, 32)
 	printSlice(s2)
 	printSlice(s3)
+
+	fmt.Println("Copying slice ===============================")
+	copy(s2, s1)
+	printSlice(s2)
 }
