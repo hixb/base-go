@@ -36,4 +36,9 @@ func main() {
 	front := s2[0]
 	s2 = s2[1:]
 	fmt.Println(front)
+
+	fmt.Println("Popping from back ===============================")
+	back := s2[len(s2)-1]
+	s2 = s2[:len(s2)-1]
+	fmt.Println(back)
 }
