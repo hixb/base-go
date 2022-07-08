@@ -31,7 +31,7 @@ func sliceExpand() {
 	// s1的值为[2 3 4 5], s2的值为[5 6]
 	// slice 可以向后扩展, 不可以向前扩展
 	// s[i]不可以超越[len](s), 向后扩展不可哟超越底层数据cap(s)
-	arr := [...]int{0, 1, 3, 4, 5, 6, 7}
+	arr := [...]int{0, 1, 2, 3, 4, 5, 6, 7}
 	fmt.Println("arr =", arr)
 	s1 := arr[2:6]
 	s2 := s1[3:5] // [s1[3], s1[4]]
@@ -40,10 +40,26 @@ func sliceExpand() {
 	fmt.Printf("s2=%v, len(s2)=%d, cap(s2)=%d\n", s2, len(s2), cap(s2))
 }
 
+// 向 slice 添加元素
+func sliceAddEl() {
+	// 添加元素时如果超越cap, 系统会重新分配更大的底层数组
+	// 由于值传递的关系, 必须接收append的返回值
+	// s = append(s, val)
+	arr := [...]int{0, 1, 2, 3, 4, 5, 6, 7}
+	s1 := arr[2:6]
+	s2 := s1[3:5]
+	s3 := append(s2, 10)
+	s4 := append(s3, 11)
+	s5 := append(s4, 12)
+	fmt.Println("s3, s4, s5 =", s3, s4, s5)
+	// s4 and s5 no longer view array.
+	fmt.Println("arr =", arr)
+}
+
 func main() {
 	arr := [...]int{0, 1, 2, 3, 4, 5, 6, 7, 8}
 	var arr2 [5]int
-	//array1()
+	array1()
 
 	s1 := arr[2:]
 	s2 := arr[:]
@@ -71,4 +87,7 @@ func main() {
 
 	fmt.Println("sliceExpand ==============================")
 	sliceExpand()
+
+	fmt.Println("sliceAddEl ==============================")
+	sliceAddEl()
 }
