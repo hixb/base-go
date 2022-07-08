@@ -34,14 +34,25 @@ func main() {
 	s1 := arr[2:]
 	s2 := arr[:]
 
+	fmt.Println("updateSlice(s1) ==============================")
 	updateSlice(s1)
 	fmt.Println(s1)
 	fmt.Println(arr)
 
+	fmt.Println("updateSlice(s2) ==============================")
 	updateSlice(s2)
 	fmt.Println(s2)
 	fmt.Println(arr)
 
+	fmt.Println("pointerPassing2 ==============================")
 	pointerPassing2(arr2[:])
 	fmt.Println(arr2)
+
+	fmt.Println("Reslice ==============================")
+	fmt.Println(s2)
+	s2 = s2[:5]
+	fmt.Println(s2)
+	s2 = s2[2:]
+	fmt.Println(s2)
+
 }
